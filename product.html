@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChocolateHub | Our Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #120b08;
+            color: #fff5e6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: #1d100b;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #8c6838;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #d6ad60;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #fff5e6;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d6ad60;
+        }
+
+        /* Page Heading */
+        .hero {
+            text-align: center;
+            padding: 75px 20px 50px;
+            background: linear-gradient(
+                135deg, #28150e, #100907
+            );
+        }
+
+        .hero p {
+            color: #d6ad60;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d6ad60;
+        }
+
+        .hero .description {
+            color: #c8b9ac;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 60px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            color: #d6ad60;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #c8b9ac;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #21130e;
+            border: 1px solid #493021;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 28px;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #d6ad60;
+        }
+
+        .product-image {
+            height: 240px;
+            background: #342016;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #d6ad60;
+            color: #1d100b;
+            padding: 6px 12px;
+            font-size: 11px;
+            margin-top: 22px;
+            letter-spacing: 1px;
+        }
+
+        .product-card h3 {
+            font-size: 23px;
+            margin: 15px 10px 10px;
+        }
+
+        .product-card p {
+            color: #c8b9ac;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 0 18px;
+        }
+
+        .price {
+            color: #d6ad60;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 18px 0;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            background: #d6ad60;
+            color: #1d100b;
+            padding: 12px 27px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #fff0c4;
+        }
+
+        /* Premium Banner */
+        .banner {
+            margin: 10px 8% 70px;
+            padding: 50px 25px;
+            text-align: center;
+            background: #28170f;
+            border: 1px solid #8c6838;
+        }
+
+        .banner h2 {
+            font-size: 32px;
+            color: #d6ad60;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            color: #d2c1b3;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b0705;
+            text-align: center;
+            padding: 30px 15px;
+            border-top: 1px solid #493021;
+        }
+
+        footer h3 {
+            color: #d6ad60;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #a99b90;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                padding: 40px 6%;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .banner h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">ChocolateHub.</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#collection">Collections</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p>THE ART OF FINE CHOCOLATE</p>
+
+        <h1>Our <span>Chocolate</span> Collection</h1>
+
+        <div class="description">
+            Discover handcrafted chocolates made for extraordinary moments.<br>
+            Every bite is a little taste of luxury.
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="collection">
+
+        <div class="section-heading">
+            <h2>Signature Collection</h2>
+            <p>Crafted with passion. Wrapped in luxury.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=80"
+                        alt="Dark chocolate">
+                </div>
+
+                <span class="tag">BESTSELLER</span>
+                <h3>Midnight Noir</h3>
+                <p>Rich dark chocolate with an intense,
+                   smooth cocoa flavour.</p>
+
+                <div class="price">₹399</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="goldern.jfif"
+                        alt="Milk chocolate">
+                </div>
+
+                <span class="tag">CUSTOMER FAVOURITE</span>
+                <h3>Golden Milk</h3>
+                <p>Silky milk chocolate with a delicate
+                   sweetness and creamy finish.</p>
+
+                <div class="price">₹349</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=800&q=80"
+                        alt="Chocolate pralines">
+                </div>
+
+                <span class="tag">PREMIUM</span>
+                <h3>Royal Pralines</h3>
+                <p>Delicate chocolate pralines with
+                   an irresistible centre.</p>
+
+                <div class="price">₹599</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+                        alt="Chocolate truffles">
+                </div>
+
+                <span class="tag">HANDCRAFTED</span>
+                <h3>Velvet Truffles</h3>
+                <p>Soft, luxurious chocolate truffles
+                   made for special occasions.</p>
+
+                <div class="price">₹449</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=800&q=80"
+                        alt="Chocolate gift box">
+                </div>
+
+                <span class="tag">GIFT COLLECTION</span>
+                <h3>Signature Gift Box</h3>
+                <p>A beautifully presented chocolate
+                   selection for memorable gifts.</p>
+
+                <div class="price">₹799</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80"
+                        alt="Chocolate assortment">
+                </div>
+
+                <span class="tag">EXCLUSIVE</span>
+                <h3>Chocolate Royale</h3>
+                <p>An elegant assortment created for
+                   true chocolate lovers.</p>
+
+                <div class="price">₹999</div>
+                <a href="#contact" class="buy-btn">Enquire Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="banner">
+        <h2>A Gift Wrapped in Luxury</h2>
+
+        <p>
+            Make every celebration sweeter with our
+            premium chocolate gift collections.
+        </p>
+
+        <a href="#collection" class="buy-btn">
+            Explore Collection
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>ChocolateHub.</h3>
+
+        <p>
+            Where every bite tells a story.<br>
+            Premium Chocolate • Crafted with Love<br>
+            Email: hello@chocolatehub.com
+        </p>
+
+        <p style="margin-top: 15px;">
+            &copy; 2026 ChocolateHub. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

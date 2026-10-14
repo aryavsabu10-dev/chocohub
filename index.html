@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChocoHub | Luxury Chocolates</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #f5e6d0;
+    color: #2b150c;
+}
+
+header {
+    background: #1b0b05;
+    color: #e6b765;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #e6b765;
+}
+
+.hero {
+    min-height: 500px;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+      linear-gradient(90deg, #1b0b05 15%, #1b0b0580 100%),
+      url("https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.welcome {
+    color: #e6b765;
+    letter-spacing: 4px;
+    font: 12px Arial, sans-serif;
+}
+
+h1 {
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+h1 span {
+    color: #e6b765;
+    font-style: italic;
+}
+
+.hero p {
+    line-height: 1.8;
+    margin-bottom: 28px;
+    font-family: Arial, sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background: #e6b765;
+    color: #241006;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.features {
+    background: #281309;
+    color: white;
+    padding: 30px 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.features h3 {
+    color: #e6b765;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.features p {
+    font: 12px Arial, sans-serif;
+    color: #e5d0bb;
+}
+
+.section {
+    padding: 65px 7%;
+    text-align: center;
+}
+
+.subtitle {
+    color: #956126;
+    letter-spacing: 3px;
+    font: 12px Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.section h2,
+.about h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    margin-bottom: 15px;
+}
+
+.intro {
+    color: #765d4b;
+    font: 14px Arial, sans-serif;
+    margin-bottom: 35px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.card {
+    background: #fffaf2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #32180815;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #765d4b;
+    font: 13px/1.7 Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.card a {
+    color: #8a531c;
+    text-decoration: none;
+    font: bold 13px Arial, sans-serif;
+}
+
+.about {
+    padding: 65px 7%;
+    background: #281309;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.about img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.about h2 span {
+    color: #e6b765;
+    font-style: italic;
+}
+
+.about p {
+    color: #e5d0bb;
+    font: 14px/2 Arial, sans-serif;
+    margin: 20px 0 25px;
+}
+
+.newsletter {
+    padding: 55px 7%;
+    text-align: center;
+    background: #ead6b9;
+}
+
+.newsletter h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+    font: 14px Arial, sans-serif;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 450px;
+    margin: auto;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #c7a783;
+    border-radius: 25px;
+}
+
+.newsletter button {
+    border: 0;
+    background: #281309;
+    color: #e6b765;
+    padding: 13px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+footer {
+    background: #160903;
+    color: #e6b765;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer p {
+    color: #d7c1a9;
+    font: 12px/2 Arial, sans-serif;
+    margin-top: 10px;
+}
+
+@media (max-width: 850px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        line-height: 2.5;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <div class="logo">🍫 Choco<span>Hub</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="welcome">WELCOME TO CHOCOHUB</div>
+
+        <h1>Little Bites of<br>
+        <span>Happiness</span></h1>
+
+        <p>
+            Premium chocolates, crafted with love,
+            to make every moment sweeter.
+            Discover the luxury of chocolate with ChocoHub.
+        </p>
+
+        <a href="#shop" class="btn">Shop Now →</a>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <div>
+        <div style="font-size:30px">✧</div>
+        <h3>Premium Quality</h3>
+        <p>Only the finest ingredients</p>
+    </div>
+
+    <div>
+        <div style="font-size:30px">♡</div>
+        <h3>Crafted with Love</h3>
+        <p>Made for every chocolate lover</p>
+    </div>
+
+    <div>
+        <div style="font-size:30px">♧</div>
+        <h3>Safe Delivery</h3>
+        <p>Sweetness at your doorstep</p>
+    </div>
+
+    <div>
+        <div style="font-size:30px">❋</div>
+        <h3>Special Gifts</h3>
+        <p>Perfect for every occasion</p>
+    </div>
+</section>
+
+<!-- Shop Section -->
+<section class="section" id="shop">
+    <div class="subtitle">OUR SPECIALTIES</div>
+
+    <h2>Discover Your Perfect Chocolate</h2>
+
+    <p class="intro">
+        From rich dark chocolate to creamy delights,
+        find your favourite flavour.
+    </p>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=700&q=80"
+                 alt="Dark chocolate">
+            <div class="card-content">
+                <h3>Dark Chocolate</h3>
+                <p>Rich, smooth and wonderfully intense.</p>
+                <a href="#contact">Explore More →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="milkchocolate.jpg"
+                 alt="Milk chocolate">
+            <div class="card-content">
+                <h3>Milk Chocolate</h3>
+                <p>Creamy sweetness in every bite.</p>
+                <a href="#contact">Explore More →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="truffle.jfif"
+                 alt="Chocolate truffles">
+            <div class="card-content">
+                <h3>Chocolate Truffles</h3>
+                <p>Elegant treats for special moments.</p>
+                <a href="#contact">Explore More →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="gift.webp"
+                 alt="Gift box">
+            <div class="card-content">
+                <h3>Luxury Gift Boxes</h3>
+                <p>Beautiful chocolate gifts for loved ones.</p>
+                <a href="#contact">Explore More →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- About Us -->
+<section class="about" id="about">
+
+    <img src="https://images.unsplash.com/photo-1493925410384-84f842e616fb?auto=format&fit=crop&w=1000&q=80"
+         alt="Chocolate making">
+
+    <div>
+        <div class="subtitle" style="color:#e6b765">
+            OUR STORY
+        </div>
+
+        <h2>A Hub for<br>
+        <span>Chocolate Lovers</span></h2>
+
+        <p>
+            ChocoHub was born from a simple idea:
+            life is better with chocolate.
+            Our vision is to bring chocolate lovers
+            together through delightful flavours,
+            thoughtful gifts and memorable experiences.
+        </p>
+
+        <a href="#contact" class="btn">Discover ChocoHub →</a>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter" id="contact">
+    <h2>Stay in Our Sweet Circle</h2>
+
+    <p>Discover new treats, special offers and sweet surprises.</p>
+
+    <form action="#" method="get">
+        <input type="email" name="email"
+               placeholder="Enter your email" required>
+
+        <button type="submit">Join Us</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h2>🍫 ChocoHub</h2>
+
+    <p>Little Bites of Happiness.</p>
+
+    <p>
+        <a href="#home">Home</a> |
+        <a href="#shop">Shop</a> |
+        <a href="#about">About Us</a> |
+        <a href="#contact">Contact</a>
+    </p>
+
+    <p>© 2026 ChocoHub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
